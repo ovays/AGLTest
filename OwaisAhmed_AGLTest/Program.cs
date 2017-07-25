@@ -33,7 +33,7 @@ namespace OwaisAhmed_AGLTest
                         Person[] personList = JsonConvert.DeserializeObject<Person[]>(responseBody);
 
                         //finding cats by gender type
-                        var catsByGender = personList.Where(t => t.pets != null)
+                        var catsByGender = personList.Where(pet => pet.pets != null)
                                      .GroupBy(person => person.gender)
                                      .Select(g => new
                                      {
